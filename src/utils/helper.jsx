@@ -14,11 +14,12 @@ export const getFormattedTime = (time) => {
   }${seconds}`;
 };
 
-export const shuffleArray = (acidRainWords) => {
-  let arr = Array.from({ length: acidRainWords.length }, (_, i) => i); // 0부터 10까지의 배열 생성
+// 인덱스 랜덤 반환
+export const getShuffledIndexArray = (acidRainWords) => {
+  let arr = Array.from({ length: acidRainWords.length }, (_, i) => i);
   for (let i = arr.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1)); // 0부터 i까지 랜덤 인덱스 생성
-    [arr[i], arr[j]] = [arr[j], arr[i]]; // 해당 인덱스와 랜덤 인덱스의 요소 교환
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
   }
   return arr;
 };
@@ -31,32 +32,32 @@ export const chunkArray = (array, chunkSize) => {
   return result;
 };
 
-export const getInfo = (level) => {
-  let LENGTH = -1;
+export const getLevelInfo = (level) => {
+  let columns = -1;
   let timeLimit = -1;
   switch (level) {
     case 1:
-      LENGTH = 3;
+      columns = 3;
       timeLimit = 6;
       break;
     case 2:
-      LENGTH = 5;
+      columns = 5;
       timeLimit = 6;
       break;
     case 3:
-      LENGTH = 6;
+      columns = 6;
       timeLimit = 5;
       break;
     case 4:
-      LENGTH = 7;
+      columns = 7;
       timeLimit = 5;
       break;
     case 5:
-      LENGTH = 8;
+      columns = 8;
       timeLimit = 5;
       break;
     default:
-      console.error('Level Missing');
+      throw new Error('Level Missing');
   }
-  return { LENGTH, timeLimit };
+  return { columns, timeLimit, interval: timeLimit / columns };
 };

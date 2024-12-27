@@ -1,12 +1,12 @@
 import React, { useEffect, useRef, useState } from 'react';
 import './index.css';
 import { Word } from 'components/AcidRain/Word';
-import { acidRainWords, levelList } from 'constants/acidRainContents';
+import { WORDS, levelList } from 'constants/acidRainContents';
 import {
   chunkArray,
   getFormattedDate,
-  getInfo,
-  shuffleArray,
+  getLevelInfo,
+  getShuffledIndexArray,
 } from 'utils/helper';
 import AcidRainResultModal from '../AcidRainResultModal';
 import { AcidRainStatisticsModal } from '../AcidRainStatisticsModal';
@@ -17,8 +17,8 @@ import ExitButton from 'assets/ExitButton.svg';
 const RainSound = new Audio(rain_sound);
 const WaterDrop = new Audio(water_drop);
 
-let shuffledIndexes = shuffleArray(acidRainWords); //다음 게임 시 초기화
-let lastWord = acidRainWords[shuffledIndexes.indexOf(acidRainWords.length - 1)]; //게임 끝내기 위해 필요
+let shuffledWordIndexes = getShuffledIndexArray(WORDS); //다음 게임 시 초기화
+let lastWord = WORDS[shuffledWordIndexes.indexOf(WORDS.length - 1)]; //게임 끝내기 위해 필요
 
 export const AcidRainModal = ({ closeAcidRainModal, userName }) => {
   const [isStarted, setIsStarted] = useState(false);
@@ -28,9 +28,9 @@ export const AcidRainModal = ({ closeAcidRainModal, userName }) => {
   const inputRef = useRef(null);
   const buttonRef = useRef(null);
   const [fallingWords, setFallingWords] = useState([]);
-  const { LENGTH, timeLimit } = getInfo(level);
-  const interval = timeLimit / LENGTH;
-  const chunks = chunkArray(shuffledIndexes, LENGTH); //LENGTH개의 원소로 나눔
+  const { columns, timeLimit, interval } = getLevelInfo(level);
+
+  const chunkedShuffledWordIndexes = chunkArray(shuffledWordIndexes, columns); //LENGTH개의 원소로 나눔
   const [isResultModalOpen, setIsResultModalOpen] = useState(false);
   const handleClickModal = (e) => {
     buttonRef.current?.focus();
@@ -227,15 +227,15 @@ export const AcidRainModal = ({ closeAcidRainModal, userName }) => {
         />
         <div className='acid_rain_contents'>
           <div className='acid_rain_level'>{level}단계</div>
-          {chunks.map((row, rowIndex) => (
+          {chunkedShuffledWordIndexes.map((row, rowIndex) => (
             <div className='acid_rain_top_row' key={rowIndex}>
-              {row.map((wordIndex, index) => (
+              {row.map((shuffledWordIndex, index) => (
                 <Word
                   key={index}
-                  word={acidRainWords[wordIndex]}
-                  isChecked={checkedWords.includes(acidRainWords[wordIndex])}
+                  word={WORDS[shuffledWordIndex]}
+                  isChecked={checkedWords.includes(WORDS[shuffledWordIndex])}
                   timeLimit={timeLimit}
-                  interval={interval * shuffledIndexes[wordIndex]}
+                  interval={interval * shuffledWordIndexes[shuffledWordIndex]}
                   addFallingWords={addFallingWords}
                   popFallingWords={popFallingWords}
                 />
