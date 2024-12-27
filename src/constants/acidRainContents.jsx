@@ -1,4 +1,4 @@
-export const acidRainWords = [
+export const WORDS = [
   '물고기',
   '바다',
   '꽃밭',

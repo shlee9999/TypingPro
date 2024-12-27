@@ -50,19 +50,14 @@ export const Word = ({
       setPosition(70);
       addFallingWords(word);
       await delay(timeLimit * 1000); //Falling 끝
-      popFallingWords(word);
-      //땅에 떨어짐
+      popFallingWords(word); //땅에 떨어짐
     };
     moveWord();
   }, []);
 
-  return (
-    <div className='word'>
-      {isTyped ? (
-        <div style={non_movingStyle}></div>
-      ) : (
-        <div style={movingStyle}>{word}</div>
-      )}
-    </div>
+  return isTyped ? (
+    <div style={non_movingStyle}></div>
+  ) : (
+    <div style={movingStyle}>{word}</div>
   );
 };
