@@ -1,70 +1,79 @@
-# Getting Started with Create React App
+# ⭐TypingPro ReadMe⭐
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![긴 글 연습](https://github.com/user-attachments/assets/5aa8d5a0-b69b-4437-b5a6-47e5c5e48a36)
 
-## Available Scripts
+- 배포 URL : https://typing-pro-sigma.vercel.app/
+- Github : https://github.com/shlee9999/Web_Programming_Project
 
-In the project directory, you can run:
+## **✨ 프로젝트 소개**
 
-### `npm start`
+TypingPro는 한컴타자연습을 모티브로 한 타자 연습 플랫폼입니다. 백엔드 없이 프론트엔드만으로 구현하였으며, 팀원은 총 3명이었습니다.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## **⏰ 개발 기간**
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+2023.04 ~ 2023.06
 
-### `npm test`
+## **👪 팀원 구성**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- 김민정
+- 이성훈
+- 한수정
 
-### `npm run build`
+## **♻️ 개발 환경**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+| 카테고리 | 기술/도구 |
+| --- | --- |
+| Front-end | React, Javascript, HTML, CSS |
+| 협업 도구 | Notion, Figma, Discord |
+| 배포 서비스 | Vercel |
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## **🏗️** 프로젝트 구조
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```
+📦src
+ ┣ 📂assets
+ ┃ ┣ 📂avatar (Dog.png, Female.png, Male.png)
+ ┃ ┣ 📂sounds (Enter.mp3, Rain.mp3, WaterDrop.wav, Yeah.wav)
+ ┃ ┣ 📜ExitButton.svg
+ ┃ ┣ 📜header_logo.png
+ ┃ ┗ 📜logo.png
+ ┣ 📂components
+ ┃ ┣ 📂AcidRain 
+ ┃ ┣ 📂WithContext 
+ ┃ ┗ 📂WithoutContext
+ ┣ 📂constants 
+ ┣ 📂hooks
+ ┣ 📂images
+ ┃ ┗ 📂aboutUs
+ ┣ 📂pages
+ ┃ ┣ 📂MainPage
+ ┃ ┣ 📂NotFound
+ ┃ ┗ 📂TypingPage
+ ┣ 📂utils
+ ┣ 📜global.css
+ ┗ 📜index.jsx
+```
 
-### `npm run eject`
+## 🌈 핵심 기능
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### 긴 글 연습
+![긴 글 연습](https://github.com/user-attachments/assets/31979f86-d3e3-4885-bb0a-3e0e2e2a9645)
+- 사용자가 키를 입력하면 실시간으로 UI와 TypingSpeed, Typing Accuracy에 반영됩니다.
+- 1초마다 Typing Speed가 감소합니다.
+- Pause 버튼을 눌러 일시정지 후 다시 시작할 수 있습니다.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### 단어 연습
+![단어 연습](https://github.com/user-attachments/assets/35f23080-af24-43ba-b6d3-fa5c05901581)
+- 로직은 긴 글 연습과 동일하지만 보기가 단어로만 이루어져 있습니다..
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### 소나기 게임
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+https://github.com/user-attachments/assets/645d2978-6b90-4919-928b-662b622d3e42
+- 단어가 바닥 경계에 닿기 전에 입력해야 하는 미니게임입니다.
+- 레벨이 증가함에 따라 단어의 개수와 내려오는 속도가 증가합니다.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 통계
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+![{052A7140-AD4D-404B-A82A-7D45CDBF16E5}](https://github.com/user-attachments/assets/81147e92-4f2a-45e2-bb89-2bc844c68afe)
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
