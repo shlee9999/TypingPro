@@ -3,11 +3,11 @@
 ![긴 글 연습](https://github.com/user-attachments/assets/5aa8d5a0-b69b-4437-b5a6-47e5c5e48a36)
 
 - 배포 URL : https://typing-pro-sigma.vercel.app/
-- Github : https://github.com/shlee9999/Web_Programming_Project
 
 ## **✨ 프로젝트 소개**
 
-TypingPro는 한컴타자연습을 모티브로 한 타자 연습 플랫폼입니다. 백엔드 없이 프론트엔드만으로 구현하였으며, 팀원은 총 3명이었습니다.
+TypingPro는 한컴타자연습에서 영감을 받아 개발된 타자 연습 웹 플랫폼입니다. DB와 백엔드 의존성을 제거하고 로그인 절차를 생략하여 누구나 즉시 타자 연습을 시작할 수 있으며 기록은 로컬 스토리지에 저장됩니다. 
+떨어지는 단어를 제한 시간 내에 입력해야 하는 게임 요소도 도입하여 재미와 도전 의식을 더해보았습니다.
 
 ## **⏰ 개발 기간**
 
